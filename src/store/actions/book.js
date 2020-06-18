@@ -27,3 +27,10 @@ export const fetchBooks = () => {
 
     }
 }
+
+export const setSearchString = (searchString) => {
+    return {
+        type: actionTypes.SET_SEARCH_STRING,
+        searchString: searchString
+    }
+}

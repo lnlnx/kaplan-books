@@ -1,3 +1,4 @@
 export {
-    booksFetchStart
+    booksFetchStart,
+    setSearchString
 } from './book'

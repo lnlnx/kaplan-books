@@ -4,6 +4,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     books: [],
+    searchString: "",
     error: null,
     loading: false
 };
@@ -27,6 +28,11 @@ const reducer = (state = initialState, action) => {
                 error: action.error,
                 loading: false
             };
+        case actionTypes.SET_SEARCH_STRING:
+            return {
+                ...state,
+                searchString: action.searchString
+            }
         default:
             return state;
 
