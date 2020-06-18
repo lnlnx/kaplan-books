@@ -3,6 +3,7 @@ import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
+import classes from './NewBook.module.css';
 class NewBook extends Component {
     state = {
         title:{  
@@ -66,8 +67,10 @@ class NewBook extends Component {
         return (
             <form>
                 {form}
-                <Button btnType="Success" clicked={this.createBookHandler}>Create Now</Button>
-                <Button btnType="Danger" clicked={this.cancelBookHandler}>Cancel</Button>
+                <div className={classes.Button_Group}>
+                    <Button clicked={this.createBookHandler}>Create Now</Button>
+                    <Button clicked={this.cancelBookHandler}>Cancel</Button>
+                </div>
             </form>
         );
     }

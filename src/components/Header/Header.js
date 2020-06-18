@@ -17,8 +17,11 @@ const Header = (props) => {
             <Modal show={creating} modalClosed={createBookCancelHandler}>
                 <NewBook modalClosed={createBookCancelHandler}/>
             </Modal>
-            <h1 className={classes.Header_Title}>Book</h1>
-            <Button clicked={createBookHandler} >Create Book</Button>
+            <h2 className={classes.Header_Title}>Books</h2>
+            <div className={classes.CreateButtton}>
+                <Button  clicked={createBookHandler} >Create New Book</Button>
+            </div>
+          
         </div>
     );
 };

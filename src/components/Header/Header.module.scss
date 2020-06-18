@@ -1,5 +1,5 @@
 .Header {
-    height: 56px;
+    height: 10%;
     width: 100%;
     position: fixed;
     top: 0;
@@ -10,14 +10,6 @@
     padding: 0 20px;
     box-sizing: border-box;
     z-index: 90;
-}
-
-.Toolbar__Button {
-    height: 100%;
-}
-
-.Header_Title {
-    height: 80%;
 }
 
 @media (max-width: 499px) {
