@@ -12,6 +12,5 @@ export function* fetchBooksSaga(action) {
                 type: actionTypes.FETCH_BOOKS_FAIL,
                 error: error
             })
-       
     }
 };
