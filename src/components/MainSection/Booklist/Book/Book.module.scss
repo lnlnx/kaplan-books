@@ -1,0 +1,39 @@
+@import '../../../../styles/_shared.scss';
+
+.Book {
+    display: inline-block;
+    flex-direction: column;
+    margin : {
+        top: 10px;
+        left: 10px;
+    };
+    width: 40%;
+    height: 120px;
+    border: 1px solid #e6e6e6;
+    border-radius: 0;
+    background: #fefefe;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+@media (max-width: 499px) {
+    .Book {
+        width: 90%;
+    }
+}
+
+.Book_Title {
+    color: #{$default-text-color};
+    padding-left: 10px;
+    margin: {
+        top: 8px;
+        bottom: 8px;
+    };
+}
+
+.Book_Content {
+    color: #{$default-text-color};
+    font-size: 16px;
+    margin: 8px;
+}

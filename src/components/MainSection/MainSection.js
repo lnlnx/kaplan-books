@@ -1,10 +1,12 @@
 import React from 'react';
 import Booklist from './Booklist/Booklist';
 import Search from './Search/Search';
-import Book from './Booklist/Book/Book';
+import classes from './MainSection.module.scss';
+
+
 const MainSection = () => {
     return (
-        <div>
+        <div className={classes.MainSection}>
             <Search></Search>
             <Booklist></Booklist>
         </div>

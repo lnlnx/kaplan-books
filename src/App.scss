@@ -1,4 +1,8 @@
+@import './styles/shared.scss';
 
+.App {
+  font-family: #{$default-text-font};
+}
 
 
 @media (prefers-reduced-motion: no-preference) {
