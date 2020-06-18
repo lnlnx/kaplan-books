@@ -2,7 +2,7 @@ import { call, put } from 'redux-saga/effects';
 import * as actionTypes from '../actions/actionTypes';
 import { responseToBooks } from '../../utils/BookPreprocess';
 
-export function* fetchBooksSaga(action) {
+export function* fetchBooksSaga() {
     try {
         const books = yield call(fetch, 'https://www.googleapis.com/books/v1/volumes?q=kaplan%20test%20prep');
         const bookData = yield books.json()

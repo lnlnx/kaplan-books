@@ -4,6 +4,7 @@ import Button from '../UI/Button/Button';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
 import classes from './NewBook.module.css';
+
 class NewBook extends Component {
     state = {
         title:{  
@@ -28,7 +29,6 @@ class NewBook extends Component {
         }
     }
     inputChangedHandler = (event, inputIdentifier) => {
-        console.log(event.target.value,inputIdentifier )
         const bookForm = {...this.state};
         const bookElement = {...bookForm[inputIdentifier], value: event.target.value};
         bookForm[inputIdentifier] = bookElement
@@ -37,7 +37,8 @@ class NewBook extends Component {
     }
     createBookHandler = (event) => {
         event.preventDefault();
-        const formData = {};
+        // Assign a random ID for local data
+        const formData = {id: '_' + Math.random().toString(36).substr(2, 9)};
         for(let formElementIdentifier in this.state) {
             formData[formElementIdentifier] = this.state[formElementIdentifier].value
         }
@@ -49,7 +50,6 @@ class NewBook extends Component {
         this.props.modalClosed();
     }
     render() {
-        console.log(this.props)
         const formEleArray = [];
         for (let key in this.state) {
             formEleArray.push({
