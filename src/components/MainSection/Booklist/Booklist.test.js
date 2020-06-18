@@ -1,7 +1,7 @@
-import {getVisibleBooks} from './VisibleBooklist';
+import {getVisibleBooks} from './Booklist';
 
 describe("getVisibleBooks", () => {
-    test("should filter books by search string and return list of books with matched parts", () => {
+    it("should filter books by search string and return list of books with matched parts", () => {
         const testBooks = [
             {id: "1", authors: "author1", title: "title", publisher: "some"},
             {id: "2", authors: "author1", title: "title2", publisher: "some title"},
