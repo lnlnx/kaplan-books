@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { createStore, applyMiddleware, compose } from 'redux';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+const composeEnhancers = process.env.NODE_ENV === "prod" ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 ReactDOM.render(
   <React.StrictMode>

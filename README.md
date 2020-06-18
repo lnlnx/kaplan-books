@@ -3,6 +3,8 @@
 ## Running the application
 
 ```javascript
+# first install npm packages
+npm install 
 npm start
 ```
 
