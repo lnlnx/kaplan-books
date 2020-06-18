@@ -11,7 +11,7 @@ const Book = (props) => {
 
     const bookContentBody = Object.entries(BookPropertyName).map(entry => {
         const [key, propertyName] = entry
-        return props.book[key] && <p key={key} className={classes.Book_Content}>{BookPropertyName[key]}: {props.book[key]}</p>
+        return props.book[key] && <p key={key} className={classes.Book_Content}>{propertyName}: {props.book[key]}</p>
     });
 
     return (
