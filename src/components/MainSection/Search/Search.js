@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import * as actions from '../../../store/actions/index';
 import { connect } from 'react-redux';
 
-const Search = (props) => {
+const Search = ({onSearch}) => {
 
     const [searchString, setSearchString] = useState("");
     const inputRef = useRef()
@@ -11,23 +11,24 @@ const Search = (props) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             if (searchString === inputRef.current.value) {
-                props.onChange(searchString)
+                onSearch(searchString)
             }
         }, 500)
         return () => {clearTimeout(timer);}
-    }, [searchString, inputRef]);
+    }, [searchString, inputRef, onSearch]);
 
     return (
         <input
          ref = {inputRef}
          value={searchString}
+         placeholder={"Search"}
          onChange={event => setSearchString(event.target.value)}/>
     );
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onChange: (searchString) => dispatch(actions.setSearchString(searchString))
+        onSearch: (searchString) => dispatch(actions.setSearchString(searchString))
     }
 };
 

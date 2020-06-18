@@ -1,9 +1,11 @@
 import React from 'react';
 import Booklist from './Booklist/Booklist';
 import Search from './Search/Search';
+import classes from './MainSection.module.scss';
+
 const MainSection = (props) => {
     return (
-        <div>
+        <div className={classes.MainSection}>
             <Search></Search>
             <Booklist></Booklist>
         </div>

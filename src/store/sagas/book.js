@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 import * as actionTypes from '../actions/actionTypes';
-import { responseToBooks } from '../../Utils/BookPreprocess';
+import { responseToBooks } from '../../utils/BookPreprocess';
 
 export function* fetchBooksSaga(action) {
     try {
