@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import Book from './Book/Book'; 
+import Book from './Book/Book';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
+import Spinner from '../../UI/Spinner/Spinner';
+
 class Booklist extends Component {
     componentDidMount() {
         this.props.onLoad()
     }
 
     render() {
-        console.log('booklist')
-        return (
+        let listComponent = this.props.loading ? <Spinner /> :
             <div>
-            {this.props.books.map( book => <Book key={book.id} book={book}/>)}
+                {this.props.books.map(book => <Book key={book.id} book={book} />)}
             </div>
-        );
+        return (listComponent);
     }
 };
 
@@ -44,7 +45,8 @@ export const getVisibleBooks = (books, search) => {
 };
 
 const mapStateToProps = state => ({
-    books: getVisibleBooks(state.books, state.searchString)
+    books: getVisibleBooks(state.books, state.searchString),
+    loading: state.loading
 });
 
 const mapDispatchToProps = (dispatch) => {

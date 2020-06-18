@@ -7,7 +7,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { watchBooks } from './store/sagas';
 import reducer from './store/reducers/book';
-const composeEnhancers = process.env.NODE_ENV === "prod" ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = process.env.NODE_ENV === "PROD" ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, composeEnhancers(
   applyMiddleware(sagaMiddleware)

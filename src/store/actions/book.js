@@ -31,9 +31,9 @@ export const createBook = (newBook) => {
     return {
         type: actionTypes.CREATE_BOOK,
         book: newBook
-
     }
 }
+
 export const setSearchString = (searchString) => {
     return {
         type: actionTypes.SET_SEARCH_STRING,

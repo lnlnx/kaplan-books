@@ -1,6 +1,4 @@
-
 import * as actionTypes from '../actions/actionTypes';
-
 
 const initialState = {
     books: [],
@@ -34,7 +32,6 @@ const reducer = (state = initialState, action) => {
                 searchString: action.searchString
             }
         case actionTypes.CREATE_BOOK:
-
             return {
                 ...state,
                 books: state.books.concat(action.book)
