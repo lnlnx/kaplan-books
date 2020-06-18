@@ -4,7 +4,8 @@ export function responseToBooks(response) {
             id: item.id,
             authors: item.volumeInfo.authors.join(", "),
             title: item.volumeInfo.title,
-            publisher: item.volumeInfo.publisher
+            publisher: item.volumeInfo.publisher,
+            publishedDate: item.volumeInfo.publishedDate
         })
     )
 }

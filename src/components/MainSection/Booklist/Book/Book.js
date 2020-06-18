@@ -1,11 +1,12 @@
 import React from 'react';
-
+import classes from './Book.module.css'
 const Book = (props) => {
     return (
-        <div>
-            <p>Title</p>
-            <p>Author</p>
-            <p>Publisher</p>
+        <div className={classes.Book}>
+            <p>{props.book.title}</p>
+            <p>{props.book.authors}</p>
+            <p>{props.book.publisher}</p>
+            <p>{props.book.publishedDate}</p>
         </div>
     );
 };
