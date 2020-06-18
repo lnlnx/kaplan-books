@@ -8,6 +8,7 @@ class Booklist extends Component {
     }
 
     render() {
+        console.log('booklist')
         return (
             <div>
             {this.props.books.map( book => <Book key={book.id} book={book}/>)}

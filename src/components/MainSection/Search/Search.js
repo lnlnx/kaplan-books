@@ -20,7 +20,7 @@ const Search = (props) => {
     return (
         <input
          ref = {inputRef}
-         value={props.searchString}
+         value={searchString}
          onChange={event => setSearchString(event.target.value)}/>
     );
 };

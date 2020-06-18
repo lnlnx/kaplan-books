@@ -33,6 +33,12 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 searchString: action.searchString
             }
+        case actionTypes.CREATE_BOOK:
+
+            return {
+                ...state,
+                books: state.books.concat(action.book)
+            }
         default:
             return state;
 

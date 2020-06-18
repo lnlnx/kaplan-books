@@ -1,8 +1,7 @@
 import React from 'react';
 import Booklist from './Booklist/Booklist';
 import Search from './Search/Search';
-import Book from './Booklist/Book/Book';
-const MainSection = () => {
+const MainSection = (props) => {
     return (
         <div>
             <Search></Search>
