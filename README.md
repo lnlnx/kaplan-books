@@ -2,6 +2,8 @@
 
 ## Running the application
 
+Make sure you have Node.js (NPM) installed on your machine. If not, you can download at here: https://nodejs.org/en/
+
 ```bash
 # first install npm packages
 npm install 
