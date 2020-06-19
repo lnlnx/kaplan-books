@@ -5,21 +5,31 @@
     
     .Book {
         margin: 15px 0 0 20px;
-        border: 1px solid #e6e6e6;
+        border: 1px solid #{$border-color};
         border-left: 3px solid #f5a23d;
         border-radius: 5px;
-        background: #fefefe;
+        background: $book-background-color;
         box-sizing: border-box;
         padding: 8px 0 8px 8px;
-        box-shadow: .5px 2px 1px #aaaaaa;
-        .Book_Title {
-            color: $default-text-color;
+        box-shadow: .5px 2px 1px #{$shadow-color};
+        .Book__Title {
+            color: #{$default-text-color};
             margin: 8px 0 8px 6px;
+            &--Highlighted {
+                background-color: rgba($text-highlight-color,0.3);
+                opacity:1;
+            }
         }
-        .Book_Content {
-            color: $default-text-color;
+        
+        .Book__Content {
+            color: #{$default-text-color};
             font-size: 14px;
             margin: 6px;
+
+            &--Highlighted {
+                background-color: rgba($text-highlight-color,0.3);
+                opacity:1;
+            }
         }
     }
     @media (max-width: 768px) {

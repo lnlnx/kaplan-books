@@ -12,21 +12,31 @@
     cursor: pointer;
     background-color: #{$blue};
     color: $white;
+
+    &--cancel {
+        background-color: $white;
+        color: #{$blue};
+        border: 2px solid #{$blue};
+    }
+
+    &:disabled {
+        color: #ccc;
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        animation: enable 0.2s linear;
+    }
 }
 
-.Button:first-of-type {
-    margin-left: 0;
-    padding-left: 0;
-}
-.Button:disabled {
-    color: #ccc;
-    cursor: not-allowed;
-}
-
-.Success {
-    color: #5C9210;
-}
-
-.Danger {
-    color: #944317;
+@keyframes enable {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

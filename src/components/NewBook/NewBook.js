@@ -7,34 +7,35 @@ import classes from './NewBook.module.css';
 
 class NewBook extends Component {
     state = {
-        title:{  
-            placeholder: 'Title',
-            touched: false,
+        title:{
+            title: 'Title',  
+            placeholder: 'Required',
             value: ''
         },
         authors: {
-            placeholder: 'Author',
-            touched: false,
+            title: 'Author Names',  
+            placeholder: 'Required',
             value: ''
         },
         publisher: {
-            placeholder: 'Publisher',
-            touched: false,
+            title: 'Publisher',  
+            placeholder: 'Optional',
             value: ''
         },
         publishedDate: {
-            placeholder: 'Published Date',
-            touched: false,
+            title: 'Published Date',  
+            placeholder: 'Required',
             value: ''
         }
     }
+
     inputChangedHandler = (event, inputIdentifier) => {
         const bookForm = {...this.state};
         const bookElement = {...bookForm[inputIdentifier], value: event.target.value};
         bookForm[inputIdentifier] = bookElement
         this.setState(bookForm);
-
     }
+
     createBookHandler = (event) => {
         event.preventDefault();
         // Assign a random ID for local data
@@ -45,10 +46,12 @@ class NewBook extends Component {
         this.props.onCreate(formData);
         this.props.modalClosed()
     }
+
     cancelBookHandler = (event) => {
         event.preventDefault();
         this.props.modalClosed();
     }
+
     render() {
         const formEleArray = [];
         for (let key in this.state) {
@@ -60,16 +63,25 @@ class NewBook extends Component {
         let form = formEleArray.map(ele => {
             return <Input 
             key={ele.id}
-            value={ele.config.value} 
+            value={ele.config.value}
+            required={true}
+            placeholder={ele.config.placeholder}
             changed={event => this.inputChangedHandler(event, ele.id)}
             elementConfig={ele.config}/>
         })
+        const allowToCreate = Object.entries(this.state).every(entry => {
+             const [key, value] = entry
+             if (key === "publisher") {
+                 return true
+             }
+             return value["value"] !== ""
+            });
         return (
             <form>
                 {form}
                 <div className={classes.Button_Group}>
-                    <Button clicked={this.createBookHandler}>Create Now</Button>
-                    <Button clicked={this.cancelBookHandler}>Cancel</Button>
+                    <Button clicked={this.createBookHandler} disabled={!allowToCreate}>Create Now</Button>
+                    <Button clicked={this.cancelBookHandler} cancel>Cancel</Button>
                 </div>
             </form>
         );

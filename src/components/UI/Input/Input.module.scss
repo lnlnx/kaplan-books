@@ -1,0 +1,30 @@
+@import '../../../styles/_shared.scss';
+
+.Input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+
+    .Label {
+        font-weight: 1.2em;
+        display: block;
+        margin-bottom: 8px;
+        color: $default-text-color;
+    }
+    
+    .InputElement {
+        outline: none;
+        border: transparent;
+        background-color: $white;
+        font: inherit;
+        padding: 6px 10px;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    
+        &:focus {
+            outline: none;
+            background-color: #ccc;
+        }
+    }
+}
