@@ -1,13 +1,11 @@
 import * as actionTypes from './actionTypes';
 
-
 export const booksFetchFail = (error) => {
     return {
         type: actionTypes.FETCH_BOOKS_FAIL,
         error: error
     }
 } 
-
 
 export const booksFetchStart = () => {
     return {

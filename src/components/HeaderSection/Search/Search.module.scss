@@ -1,10 +1,10 @@
 @import '../../../styles/_shared.scss';
 
 .SearchWrapper {
-    margin-top: 67px;
+    margin-top: 88px;
     width: 50%;
     height: 40px;
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid #{$gray};
     margin-left: 20px;
     position: fixed;
     z-index: 50;

@@ -1,3 +1,9 @@
+@import '../../styles/_shared.scss';
 .MainSection {
-    margin-top: 120px;
+    margin-top: 130px;
+    .Text {
+        padding: 20px 20px 5px 20px;
+        margin: 0;
+        color: $default-text-color
+    }
 }
