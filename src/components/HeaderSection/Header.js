@@ -18,7 +18,7 @@ const Header = (props) => {
             <div className={classes.header}>
                 <h2 className={classes["header-title"]}>Books</h2>
                 <div className={classes["create-button"]}>
-                    <Button  clicked={() => setCreating(true)} >Create New Book</Button>
+                    <Button clicked={() => setCreating(true)} ariaLabel={"Create a New Book"}>Create New Book</Button>
                 </div>
             </div>
             <Search />

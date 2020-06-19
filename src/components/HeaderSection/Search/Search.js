@@ -5,7 +5,7 @@ import classes from './Search.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/fontawesome-free-solid';
 
-const Search = ({onSearch}) => {
+const Search = ({ onSearch }) => {
 
     const [searchString, setSearchString] = useState("");
     const inputRef = useRef()
@@ -17,22 +17,22 @@ const Search = ({onSearch}) => {
                 onSearch(searchString)
             }
         }, 500)
-        return () => {clearTimeout(timer);}
+        return () => { clearTimeout(timer); }
     }, [searchString, inputRef, onSearch]);
 
     return (
         <div className={classes["search-wrapper"]}>
-            <div className = {classes.search}>
-                <FontAwesomeIcon icon={faSearch} className={classes["search-icon"]}/>
+            <div className={classes.search}>
+                <FontAwesomeIcon icon={faSearch} className={classes["search-icon"]} />
                 <input
-                type="text"
-                className = {classes["search__input"]}
-                ref = {inputRef}
-                value={searchString}
-                placeholder={"Search"}
-                onChange={event => setSearchString(event.target.value)}/>
+                    type="text"
+                    className={classes["search__input"]}
+                    ref={inputRef}
+                    value={searchString}
+                    placeholder={"Search"}
+                    onChange={event => setSearchString(event.target.value)} />
             </div>
-         </div>
+        </div>
     );
 };
 

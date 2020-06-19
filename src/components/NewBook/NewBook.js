@@ -7,31 +7,31 @@ import classes from './NewBook.module.css';
 
 class NewBook extends Component {
     state = {
-        title:{
-            title: 'Title',  
+        title: {
+            title: 'Title',
             placeholder: 'Required',
             value: ''
         },
         authors: {
-            title: 'Author Names',  
+            title: 'Author Names',
             placeholder: 'Required',
             value: ''
         },
         publisher: {
-            title: 'Publisher',  
+            title: 'Publisher',
             placeholder: 'Optional',
             value: ''
         },
         publishedDate: {
-            title: 'Published Date',  
+            title: 'Published Date',
             placeholder: 'Required',
             value: ''
         }
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
-        const bookForm = {...this.state};
-        const bookElement = {...bookForm[inputIdentifier], value: event.target.value};
+        const bookForm = { ...this.state };
+        const bookElement = { ...bookForm[inputIdentifier], value: event.target.value };
         bookForm[inputIdentifier] = bookElement
         this.setState(bookForm);
     }
@@ -39,8 +39,8 @@ class NewBook extends Component {
     createBookHandler = (event) => {
         event.preventDefault();
         // Assign a random ID for local data
-        const formData = {id: '_' + Math.random().toString(36).substr(2, 9)};
-        for(let formElementIdentifier in this.state) {
+        const formData = { id: '_' + Math.random().toString(36).substr(2, 9) };
+        for (let formElementIdentifier in this.state) {
             formData[formElementIdentifier] = this.state[formElementIdentifier].value
         }
         this.props.onCreate(formData);
@@ -61,33 +61,36 @@ class NewBook extends Component {
             });
         }
         let form = formEleArray.map(ele => {
-            return <Input 
-            key={ele.id}
-            value={ele.config.value}
-            required={true}
-            placeholder={ele.config.placeholder}
-            changed={event => this.inputChangedHandler(event, ele.id)}
-            elementConfig={ele.config}/>
+            return <Input
+                key={ele.id}
+                value={ele.config.value}
+                required={true}
+                placeholder={ele.config.placeholder}
+                changed={event => this.inputChangedHandler(event, ele.id)}
+                elementConfig={ele.config} />
         })
         const allowToCreate = Object.entries(this.state).every(entry => {
-             const [key, value] = entry
-             if (key === "publisher") {
-                 return true
-             }
-             return value["value"] !== ""
-            });
+            const [key, value] = entry
+            if (key === "publisher") {
+                return true
+            }
+            return value["value"] !== ""
+        });
         return (
             <form>
                 {form}
                 <div className={classes["button-group"]}>
-                    <Button clicked={this.createBookHandler} disabled={!allowToCreate}>Create Now</Button>
-                    <Button clicked={this.cancelBookHandler} cancel>Cancel</Button>
+                    <Button clicked={this.createBookHandler}
+                        disabled={!allowToCreate}
+                        ariaLabel={"Submit a New Book"}>Create Now</Button>
+                    <Button clicked={this.cancelBookHandler}
+                        ariaLabel={"Return to main page"}
+                        cancel>Cancel</Button>
                 </div>
             </form>
         );
     }
 }
-
 
 const mapDispatchToProps = (dispatch) => {
     return {

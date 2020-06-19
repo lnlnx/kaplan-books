@@ -10,6 +10,7 @@ const Button = (props) => {
             className={styleClasses.join(" ")}
             onClick={props.clicked}
             disabled={props.disabled}
+            aria-label={props.ariaLabel}
         >{props.children}
         </button>
     );
