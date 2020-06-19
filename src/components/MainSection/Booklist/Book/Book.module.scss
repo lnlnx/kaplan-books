@@ -1,9 +1,9 @@
 @import '../../../../styles/_shared.scss';
 
-.BookWrapper {
+.book-wrapper {
     flex: 0 0 50%;
     
-    .Book {
+    .book {
         margin: 15px 0 0 20px;
         border: 1px solid #{$border-color};
         border-left: 3px solid #f5a23d;
@@ -12,21 +12,21 @@
         box-sizing: border-box;
         padding: 8px 0 8px 8px;
         box-shadow: .5px 2px 1px #{$shadow-color};
-        .Book__Title {
+        .book__title {
             color: #{$default-text-color};
             margin: 8px 0 8px 6px;
-            &--Highlighted {
+            &--highlighted {
                 background-color: rgba($text-highlight-color,0.3);
                 opacity:1;
             }
         }
         
-        .Book__Content {
+        .book__content {
             color: #{$default-text-color};
             font-size: 14px;
             margin: 6px;
 
-            &--Highlighted {
+            &--highlighted {
                 background-color: rgba($text-highlight-color,0.3);
                 opacity:1;
             }

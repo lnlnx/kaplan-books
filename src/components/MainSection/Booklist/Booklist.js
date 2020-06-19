@@ -13,7 +13,7 @@ class Booklist extends Component {
     render() {
         const body = <p>Failed loading books!</p> 
         const listComponent = this.props.loading ? <Spinner /> :
-                <div className={classes.BookList}>
+                <div className={classes["book-list"]}>
                     {this.props.books.map(book => <Book key={book.id} book={book} />)}
                 </div>
         
