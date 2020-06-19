@@ -34,7 +34,7 @@ export const getVisibleBooks = (books, search) => {
         let matchedParts = []
         var part
         for (part of ["authors", "title", "publisher"]) {
-            if (book[part] && book[part].includes(search)) {
+            if (book[part] && book[part].toLowerCase().includes(search.toLowerCase())) {
                 matchedParts.push(part)
             }
         };

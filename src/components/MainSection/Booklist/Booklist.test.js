@@ -1,4 +1,17 @@
-import {getVisibleBooks} from './Booklist';
+import Booklist, {getVisibleBooks} from './Booklist';
+import Book from './Book/Book';
+import Enzyme, { configure, shallow, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import React from 'react';
+import configureStore from 'redux-mock-store';
+
+const initialState = {
+  books: []
+};
+const mockStore = configureStore();
+const store = mockStore(initialState)
+
+configure({ adapter: new Adapter() });
 
 describe("getVisibleBooks", () => {
     it("should filter books by search string and return list of books with matched parts", () => {
@@ -22,4 +35,15 @@ describe("getVisibleBooks", () => {
             ]
         )
     })
+})
+
+describe("<Booklist />", () => {
+    it('renders three <Book /> components', () => {
+        const testProps = {
+            books: [{id: "123", "authors": "123", "title": "123", "publishedDate": "123"}]
+        }
+        const wrapper = mount(<Booklist store={store}/>);
+        wrapper.setProps(testProps)
+        expect(wrapper.find(Book)).toHaveLength(1)
+      });
 })
