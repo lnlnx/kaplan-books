@@ -12,7 +12,8 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_BOOKS_START:
             return {
                 ...state,
-                loading: true
+                loading: true,
+                error: null
             };
         case actionTypes.FETCH_BOOKS_SUCCESS:
             return {

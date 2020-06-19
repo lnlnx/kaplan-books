@@ -11,11 +11,13 @@ class Booklist extends Component {
     }
 
     render() {
-        let listComponent = this.props.loading ? <Spinner /> :
-            <div className={classes.BookList}>
-                {this.props.books.map(book => <Book key={book.id} book={book} />)}
-            </div>
-        return (listComponent);
+        const body = <p>Failed loading books!</p> 
+        const listComponent = this.props.loading ? <Spinner /> :
+                <div className={classes.BookList}>
+                    {this.props.books.map(book => <Book key={book.id} book={book} />)}
+                </div>
+        
+        return ((this.props.error && body) || listComponent);
     }
 };
 
@@ -47,7 +49,8 @@ export const getVisibleBooks = (books, search) => {
 
 const mapStateToProps = state => ({
     books: getVisibleBooks(state.books, state.searchString),
-    loading: state.loading
+    loading: state.loading,
+    error: state.error
 });
 
 const mapDispatchToProps = (dispatch) => {
