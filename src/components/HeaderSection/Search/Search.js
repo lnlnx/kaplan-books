@@ -41,5 +41,4 @@ const mapDispatchToProps = (dispatch) => {
         onSearch: (searchString) => dispatch(actions.setSearchString(searchString))
     }
 };
-
 export default connect(null, mapDispatchToProps)(Search);

@@ -2,27 +2,27 @@
 
 .BookWrapper {
     flex: 0 0 50%;
+    
     .Book {
-        margin: 6px 6px 0 6px;
+        margin: 15px 0 0 20px;
         border: 1px solid #e6e6e6;
         border-left: 3px solid #f5a23d;
         border-radius: 5px;
         background: #fefefe;
         box-sizing: border-box;
         padding: 8px 0 8px 8px;
+        box-shadow: .5px 2px 1px #aaaaaa;
+        .Book_Title {
+            color: #{$default-text-color};
+            margin: 8px 0 8px 6px;
+        }
+        
+        .Book_Content {
+            color: #{$default-text-color};
+            font-size: 14px;
+            margin: 6px;
+        }
     }
-
-    .Book_Title {
-        color: #{$default-text-color};
-        margin: 8px 0 8px 6px;
-    }
-    
-    .Book_Content {
-        color: #{$default-text-color};
-        font-size: 14px;
-        margin: 6px;
-    }
-
     @media (max-width: 499px) {
         flex: 0 0 100%;
     }

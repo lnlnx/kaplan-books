@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import Button from '../UI/Button/Button';
 import Modal from '../UI/Modal/Modal';
 import NewBook from '../NewBook/NewBook';
-import Search from '../HeaderSection/Search/Search';
+import Search from './Search/Search';
 import classes from './Header.module.scss';
 
 const Header = (props) => {
