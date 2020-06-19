@@ -5,6 +5,7 @@ import classes from './MainSection.module.scss';
 const MainSection = (props) => {
     return (
         <div className={classes.MainSection}>
+            <h4>All Books</h4>
             <Booklist></Booklist>
         </div>
     );

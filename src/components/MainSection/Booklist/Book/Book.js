@@ -15,9 +15,11 @@ const Book = (props) => {
     });
 
     return (
-        <div className={classes.Book}>
-            <h4 className={classes.Book_Title}>{props.book.title}</h4>
-            {bookContentBody}
+        <div className={classes.BookWrapper}>
+            <div className={classes.Book}>
+                <h4 className={classes.Book_Title}>{props.book.title}</h4>
+                {bookContentBody}
+            </div>
         </div>
     );
 };
