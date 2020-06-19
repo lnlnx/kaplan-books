@@ -3,6 +3,7 @@ import Book from './Book/Book';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
 import Spinner from '../../UI/Spinner/Spinner';
+import classes from './Booklist.module.scss';
 
 class Booklist extends Component {
     componentDidMount() {
@@ -11,7 +12,7 @@ class Booklist extends Component {
 
     render() {
         let listComponent = this.props.loading ? <Spinner /> :
-            <div>
+            <div className={classes.BookList}>
                 {this.props.books.map(book => <Book key={book.id} book={book} />)}
             </div>
         return (listComponent);
