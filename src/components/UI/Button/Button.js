@@ -1,17 +1,17 @@
 import React from 'react';
 import classes from './Button.module.scss';
 const Button = (props) => {
-    let styleClasses = [classes.Button]
+    let styleClasses = [classes["button"]]
     if (props.cancel) {
-        styleClasses.push(classes["Button--cancel"])
+        styleClasses.push(classes["button--cancel"])
     }
     return (
         <button
             className={styleClasses.join(" ")}
             onClick={props.clicked}
             disabled={props.disabled}
-            >{props.children}</button>
+        >{props.children}
+        </button>
     );
 };
-
 export default Button;

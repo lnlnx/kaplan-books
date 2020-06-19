@@ -79,7 +79,7 @@ class NewBook extends Component {
         return (
             <form>
                 {form}
-                <div className={classes.Button_Group}>
+                <div className={classes["button-group"]}>
                     <Button clicked={this.createBookHandler} disabled={!allowToCreate}>Create Now</Button>
                     <Button clicked={this.cancelBookHandler} cancel>Cancel</Button>
                 </div>

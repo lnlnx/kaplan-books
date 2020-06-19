@@ -11,13 +11,13 @@ const Header = (props) => {
         setCreating(false);
     }, []);
     return (
-        <div className={classes.HeaderSection}>
+        <div className={classes["header-section"]}>
             {creating ? <Modal modalClosed={createBookCancelHandler}>
                 <NewBook modalClosed={createBookCancelHandler}/>
             </Modal> : null}
-            <div className={classes.Header}>
-                <h2 className={classes.Header_Title}>Books</h2>
-                <div className={classes.CreateButtton}>
+            <div className={classes.header}>
+                <h2 className={classes["header-title"]}>Books</h2>
+                <div className={classes["create-button"]}>
                     <Button  clicked={() => setCreating(true)} >Create New Book</Button>
                 </div>
             </div>

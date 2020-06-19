@@ -4,8 +4,8 @@ import classes from './MainSection.module.scss';
 
 const MainSection = (props) => {
     return (
-        <div className={classes.MainSection}>
-            <h4 className={classes.MainSection__Text}>All Books</h4>
+        <div className={classes["main-section"]}>
+            <h4 className={classes["main-section__text"]}>All Books</h4>
             <Booklist></Booklist>
         </div>
     );

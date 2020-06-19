@@ -1,6 +1,6 @@
 @import '../../../styles/_shared.scss';
 
-.SearchWrapper {
+.search-wrapper {
     margin-top: 88px;
     width: 50%;
     height: 40px;
@@ -9,11 +9,11 @@
     position: fixed;
     z-index: 50;
 
-    .Search {
+    .search {
         width: 100%;
         position: relative;
 
-        .Search__input[type="text"] {
+        .search__input[type="text"] {
             width: 100%;
             padding: 10px;
             padding-left: 40px;
@@ -24,7 +24,7 @@
             color: black;
             outline: none;
         }
-        .SearchIcon {
+        .search-icon {
             left: 0;
             position: absolute;
             top: 50%;

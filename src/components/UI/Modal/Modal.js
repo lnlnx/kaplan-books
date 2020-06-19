@@ -6,7 +6,7 @@ const Modal = (props) => (
     <React.Fragment>
         <Backdrop show clicked={props.modalClosed} />
         <div
-            className={classes.Modal} display="block">
+            className={classes.modal} display="block">
             {props.children}
         </div>
     </React.Fragment>

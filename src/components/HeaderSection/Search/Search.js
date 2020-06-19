@@ -21,12 +21,12 @@ const Search = ({onSearch}) => {
     }, [searchString, inputRef, onSearch]);
 
     return (
-        <div className={classes.SearchWrapper}>
-            <div className = {classes.Search}>
-                <FontAwesomeIcon icon={faSearch} className={classes.SearchIcon}/>
+        <div className={classes["search-wrapper"]}>
+            <div className = {classes.search}>
+                <FontAwesomeIcon icon={faSearch} className={classes["search-icon"]}/>
                 <input
                 type="text"
-                className = {classes.Search__input}
+                className = {classes["search__input"]}
                 ref = {inputRef}
                 value={searchString}
                 placeholder={"Search"}
