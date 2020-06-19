@@ -4,7 +4,9 @@ const Button = (props) => {
     return (
         <button
             className={classes.Button}
-            onClick={props.clicked}>{props.children}</button>
+            onClick={props.clicked}
+            disabled={props.disabled}
+            >{props.children}</button>
     );
 };
 

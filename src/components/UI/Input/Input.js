@@ -4,10 +4,11 @@ const Input = (props) => {
    
     return (
         <div className={classes.Input}>
-            <label className={classes.Label}>{props.elementConfig.placeholder}</label>
+            <label className={classes.Label}>{props.elementConfig.title}</label>
             <input 
                 className={classes.InputElement}
-                value={props.value} 
+                value={props.value}
+                placeholder={props.placeholder} 
                 onChange={props.changed} />
         </div>
     )

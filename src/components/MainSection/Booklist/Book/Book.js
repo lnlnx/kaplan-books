@@ -11,13 +11,21 @@ const Book = (props) => {
 
     const bookContentBody = Object.entries(BookPropertyName).map(entry => {
         const [key, propertyName] = entry
-        return props.book[key] && <p key={key} className={classes.Book_Content}>{propertyName}: {props.book[key]}</p>
+        let styleClass = [classes.BookContent]
+        if (props.book["matchedParts"] && props.book["matchedParts"].includes(key)) {
+            styleClass.push(classes["BookContent--Highlighted"])
+        }
+        return props.book[key] && <p key={key} className={styleClass.join(" ")}>{propertyName}: {props.book[key]}</p>
     });
 
+    let styleClass = [classes.BookTitle]
+    if (props.book["matchedParts"] && props.book["matchedParts"].includes("title")) {
+        styleClass.push(classes["BookTitle--Highlighted"])
+    }
     return (
         <div className={classes.BookWrapper}>
             <div className={classes.Book}>
-                <h4 className={classes.Book_Title}>{props.book.title}</h4>
+                <h4 className={styleClass.join(" ")}>{props.book.title}</h4>
                 {bookContentBody}
             </div>
         </div>

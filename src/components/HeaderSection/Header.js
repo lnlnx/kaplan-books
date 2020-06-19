@@ -12,10 +12,10 @@ const Header = (props) => {
     }, []);
     return (
         <div className={classes.HeaderSection}>
+            {creating ? <Modal modalClosed={createBookCancelHandler}>
+                <NewBook modalClosed={createBookCancelHandler}/>
+            </Modal> : null}
             <div className={classes.Header}>
-                <Modal show={creating} modalClosed={createBookCancelHandler}>
-                    <NewBook modalClosed={createBookCancelHandler}/>
-                </Modal>
                 <h2 className={classes.Header_Title}>Books</h2>
                 <div className={classes.CreateButtton}>
                     <Button  clicked={() => setCreating(true)} >Create New Book</Button>
