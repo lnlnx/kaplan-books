@@ -47,3 +47,4 @@ npm test
 - SCSS & BEM
 - Jest for testing
 - Enzyme (for testing React components)
+- font-awesome (for svg icon)
